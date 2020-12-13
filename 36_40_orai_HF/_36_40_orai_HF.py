@@ -9,3 +9,13 @@ def hianyzas(hy):
     return hy
 print(hianyzas(hy))
 print()
+
+# 1. feladat
+legtobb = hy[0]
+def legrosszabb(legtobb):
+    for i in range(0,len(hy)):
+        if legtobb < hy[i]:
+            legtobb = hy[i]
+    return legtobb
+print("A legmagasabb hiányzás az osztályban: " + str(legrosszabb(legtobb)))
+print()
