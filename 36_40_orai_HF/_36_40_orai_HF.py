@@ -5,12 +5,13 @@ print()
 hy = []
 def hianyzas(hy):
     for i in range(0,60):
-        hy.append(random.randint(0,201))
+        hy.append(random.randint(0,40))
     return hy
 print(hianyzas(hy))
 print()
 
 # 1. feladat
+
 legtobb = hy[0]
 def legrosszabb(legtobb):
     for i in range(0,len(hy)):
@@ -39,44 +40,10 @@ def atlag(hiany):
         if hy[i] == atlaghy(atlag):
             hiany.append(i+1)
     return hiany
-print(atlag(hiany))
-
-if len(atlag(hiany)) >= 1:
-    print(str(atlag(hiany)) + " sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása!")
+if len(atlag(hiany)) == 0:
+    print("Nem volt olyan diák, akinek a hiányzása, az átlaggal lenne egyenlő!")
 else:
-    print("Nem volt olyan diák, akinek a hiányzása az átlaggal lenne egyenlő!")
-
-
-
-diak = 0
-def atlagdiak(diak):
-    for i in range(0,len(hy)):
-        if (hy[i] >= atlaghy(atlag)-30) or (hy[i] <= atlaghy(atlag)+30):
-#        if hy[i] == atlaghy(atlag):
-            diak = i+1
-            break
-    return (diak)
-if diak == 0:
-    print(" ")
-else:
-    print("A " + str(atlagdiak(diak)) + " -dik számú diáknak volt az átlag hiányzással megegyező hiányzása!")
+    print("A következő sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása: " + str(atlag(hiany)))
 print()
-
-
-diak = 0
-for i in range(0,len(hy)):
-    if hy[i] == atlaghy(atlag):
-        diak = i+1
-print("A " + str(diak) + "-dik diáknak volt átlag körüli a hiányzása!")
-print()
-
-#pont = 0
-#melyik = []
-#for i in range(0,31):
-#    if (hy[i] >= atlag-30) or (hy[i] <= atlag+30):
-#            pont = hy[i]
-#print(pont)
-#print(melyik)
-
 
 # 4. feladat 
