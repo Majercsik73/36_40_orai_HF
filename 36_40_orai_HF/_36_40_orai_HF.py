@@ -4,7 +4,7 @@ print("A 13.e osztály tanulóinak hiányzásai: ")
 print()
 hy = []
 def hianyzas(hy):
-    for i in range(0,31):
+    for i in range(0,60):
         hy.append(random.randint(0,201))
     return hy
 print(hianyzas(hy))
@@ -26,7 +26,7 @@ def atlaghy(atlag):
     ossz = 0
     for i in range(0,len(hy)):
         ossz += hy[i]
-        atlag = round(ossz/31)
+        atlag = round(ossz/60)
     return atlag
 print("Az osztály hiányzásainak átlagos óraszáma: " + str(atlaghy(atlag)))
 print()
@@ -41,38 +41,43 @@ print()
 #print()
 #print()
 
-hiany = 0
+hiany = []
 def atlag(hiany):
-    elem = 0
     for i in range(0,len(hy)):
         if hy[i] == atlaghy(atlag):
-            elem += 1
-    return (elem)
-if atlag(hiany) > 0:
-    print(str(atlag(hiany)) + " diáknak volt az átlag hiányzással megegyező hiányzása!")
+            hiany.append(i+1)
+    return hiany
+if atlag(hiany) == 0:
+    print("Nem volt olyan diák, akinek a hiányzása az átlaggal lenne egyenlő!")
 else:
-    print("Nem volt olyan diák, akinek a hiányzása az átlaggal lenne egyenlő")
+    print(atlag(hiany))
+    print("Sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása!")
+#    print(str(atlag(hiany)) + " diáknak volt az átlag hiányzással megegyező hiányzása!")
 print()
+
+
 
 diak = 0
 def atlagdiak(diak):
     for i in range(0,len(hy)):
-        if hy[i] == atlaghy(atlag):
+        if (hy[i] >= atlaghy(atlag)-30) or (hy[i] <= atlaghy(atlag)+30):
+#        if hy[i] == atlaghy(atlag):
             diak = i+1
+            break
     return (diak)
-if atlagdiak(diak) == 0:
+if diak == 0:
     print(" ")
 else:
     print("A " + str(atlagdiak(diak)) + " -dik számú diáknak volt az átlag hiányzással megegyező hiányzása!")
 print()
 
 
-#diak = 0
-#for i in range(0,len(hy)):
-#    if hy[i] == atlaghy(atlag):
-#        diak = i
-#print("A " + str(diak+1) + "-dik diáknak volt átlag körüli a hiányzása!")
-#print()
+diak = 0
+for i in range(0,len(hy)):
+    if hy[i] == atlaghy(atlag):
+        diak = i
+print("A " + str(diak+1) + "-dik diáknak volt átlag körüli a hiányzása!")
+print()
 
 #pont = 0
 #melyik = []
