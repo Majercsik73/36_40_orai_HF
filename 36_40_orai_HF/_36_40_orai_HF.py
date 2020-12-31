@@ -50,4 +50,4 @@ print()
 # 4. feladat 
 emelkedo = hy
 emelkedo.sort()
-print(emelkedo)
+print("A hiányzások óraszámai emelkedő számsorrendben: " + str(emelkedo))
