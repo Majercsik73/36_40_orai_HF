@@ -33,27 +33,18 @@ print()
 
 # 3. feladat
 
-#atlagalatt = 0
-#for i in range (0,len(hy)):
-#    if(hy[i] < atlaghy(atlag)):
-#        atlagalatt += 1
-#print("A hónapban " + str(atlagalatt) + " diáknál volt átlag alatti a hiányzás!")
-#print()
-#print()
-
 hiany = []
 def atlag(hiany):
     for i in range(0,len(hy)):
         if hy[i] == atlaghy(atlag):
             hiany.append(i+1)
     return hiany
-if atlag(hiany) == 0:
-    print("Nem volt olyan diák, akinek a hiányzása az átlaggal lenne egyenlő!")
+print(atlag(hiany))
+
+if len(atlag(hiany)) >= 1:
+    print(str(atlag(hiany)) + " sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása!")
 else:
-    print(atlag(hiany))
-    print("Sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása!")
-#    print(str(atlag(hiany)) + " diáknak volt az átlag hiányzással megegyező hiányzása!")
-print()
+    print("Nem volt olyan diák, akinek a hiányzása az átlaggal lenne egyenlő!")
 
 
 
@@ -75,8 +66,8 @@ print()
 diak = 0
 for i in range(0,len(hy)):
     if hy[i] == atlaghy(atlag):
-        diak = i
-print("A " + str(diak+1) + "-dik diáknak volt átlag körüli a hiányzása!")
+        diak = i+1
+print("A " + str(diak) + "-dik diáknak volt átlag körüli a hiányzása!")
 print()
 
 #pont = 0
