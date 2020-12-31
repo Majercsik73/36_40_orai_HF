@@ -42,9 +42,12 @@ def atlag(hiany):
     return hiany
 print(atlag(hiany))
 if len(atlag(hiany)) < 1:
-    print("Nincs olyan tanuló, akinek a hiányzási óraszáma, megeggyezik az átlagos hiányzás óraszámával!")
+    print("Nincs olyan tanuló, akinek a hiányzási óraszáma, megegyezik az átlagos hiányzás óraszámával!")
 else:
-    print("A fenti sorszámú tanuló(k) hiányzási óraszáma, megeggyezik az átlagos hiányzás óraszámával!")
+    print("A fenti sorszámú tanuló(k) hiányzási óraszáma, megegyezik az átlagos hiányzás óraszámával!")
 print()
 
 # 4. feladat 
+emelkedo = hy
+emelkedo.sort()
+print(emelkedo)
