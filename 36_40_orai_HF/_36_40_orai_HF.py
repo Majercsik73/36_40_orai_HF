@@ -4,8 +4,8 @@ print("A 13.e osztály tanulóinak hiányzásai: ")
 print()
 hy = []
 def hianyzas(hy):
-    for i in range(0,60):
-        hy.append(random.randint(0,40))
+    for i in range(0,31):
+        hy.append(random.randint(0,200))
     return hy
 print(hianyzas(hy))
 print()
@@ -27,7 +27,7 @@ def atlaghy(atlag):
     ossz = 0
     for i in range(0,len(hy)):
         ossz += hy[i]
-        atlag = round(ossz/60)
+        atlag = round(ossz/31)
     return atlag
 print("Az osztály hiányzásainak átlagos óraszáma: " + str(atlaghy(atlag)))
 print()
@@ -40,10 +40,11 @@ def atlag(hiany):
         if hy[i] == atlaghy(atlag):
             hiany.append(i+1)
     return hiany
-if len(atlag(hiany)) == 0:
-    print("Nem volt olyan diák, akinek a hiányzása, az átlaggal lenne egyenlő!")
+print(atlag(hiany))
+if len(atlag(hiany)) < 1:
+    print("Nincs olyan tanuló, akinek a hiányzási óraszáma, megeggyezik az átlagos hiányzás óraszámával!")
 else:
-    print("A következő sorszámú diák(ok)nak volt az átlag hiányzással megegyező hiányzása: " + str(atlag(hiany)))
+    print("A fenti sorszámú tanuló(k) hiányzási óraszáma, megeggyezik az átlagos hiányzás óraszámával!")
 print()
 
 # 4. feladat 
