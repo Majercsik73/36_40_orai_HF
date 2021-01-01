@@ -5,8 +5,8 @@ print()
 hy = []
 b = hy
 def hianyzas(hy):
-    for i in range(0,60):
-        hy.append(random.randint(0,40))
+    for i in range(0,31):
+        hy.append(random.randint(0,200))
     return hy
 print(hianyzas(hy))
 print()
@@ -28,7 +28,7 @@ def atlaghy(atlag):
     ossz = 0
     for i in range(0,len(hy)):
         ossz += hy[i]
-        atlag = round(ossz/60)
+        atlag = round(ossz/31)
     return atlag
 print("Az osztály hiányzásainak átlagos óraszáma: " + str(atlaghy(atlag)))
 print()
@@ -61,4 +61,5 @@ for i in range(len(lista)-1):
     for j in range(i+1, len(lista)):
         if lista[i] > lista [j]:
             lista[i], lista[j] = lista[j], lista[i]
-print(lista)
+print("A hiányzások óraszámai, emelkedő számsorrendben: " + str(lista))
+print()
