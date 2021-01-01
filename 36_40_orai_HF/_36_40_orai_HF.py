@@ -50,7 +50,15 @@ else:
 print()
 
 # 4. feladat
-y = hy
-y.sort()
-print("A hiányzások óraszámai emelkedő számsorrendben: " + str(y))
-print()
+#y = hy
+#y.sort()
+#print("A hiányzások óraszámai emelkedő számsorrendben: " + str(y))
+#print()
+
+# 5. feladat
+lista = hy
+for i in range(len(lista)-1):
+    for j in range(i+1, len(lista)):
+        if lista[i] > lista [j]:
+            lista[i], lista[j] = lista[j], lista[i]
+print(lista)
