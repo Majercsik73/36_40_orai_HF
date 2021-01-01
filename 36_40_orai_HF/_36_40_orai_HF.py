@@ -3,9 +3,10 @@ import random
 print("A 13.e osztály tanulóinak hiányzásai: ")
 print()
 hy = []
+b = hy
 def hianyzas(hy):
-    for i in range(0,31):
-        hy.append(random.randint(0,200))
+    for i in range(0,60):
+        hy.append(random.randint(0,40))
     return hy
 print(hianyzas(hy))
 print()
@@ -27,27 +28,29 @@ def atlaghy(atlag):
     ossz = 0
     for i in range(0,len(hy)):
         ossz += hy[i]
-        atlag = round(ossz/31)
+        atlag = round(ossz/60)
     return atlag
 print("Az osztály hiányzásainak átlagos óraszáma: " + str(atlaghy(atlag)))
 print()
 
 # 3. feladat
-
-hiany = []
+hiany = 0
 def atlag(hiany):
+    hiany = []
     for i in range(0,len(hy)):
         if hy[i] == atlaghy(atlag):
             hiany.append(i+1)
     return hiany
-print(atlag(hiany))
+atlag(hiany)
 if len(atlag(hiany)) < 1:
     print("Nincs olyan tanuló, akinek a hiányzási óraszáma, megegyezik az átlagos hiányzás óraszámával!")
 else:
-    print("A fenti sorszámú tanuló(k) hiányzási óraszáma, megegyezik az átlagos hiányzás óraszámával!")
+    print( "Az alábbi sorszámú tanuló(k) hiányzási óraszáma, megegyezik az átlagos hiányzás óraszámával:")
+    print(atlag(hiany))
 print()
 
-# 4. feladat 
-emelkedo = hy
-emelkedo.sort()
-print("A hiányzások óraszámai emelkedő számsorrendben: " + str(emelkedo))
+# 4. feladat
+y = hy
+y.sort()
+print("A hiányzások óraszámai emelkedő számsorrendben: " + str(y))
+print()
